@@ -1,4 +1,6 @@
 import styles from "./Profile.module.css";
+import MyPost from "./MyPosts/MyPosts";
+import Post from "./MyPosts/Post/Post";
 
 function Profile() {
   return (
@@ -10,10 +12,9 @@ function Profile() {
         />
       </div>
       <div>ava + info</div>
-      <div>my post</div>
-      <ul>
-        <li>post 1</li>
-        <li>post 2</li>
+      <MyPost />
+      <ul className={styles.posts}>
+        <Post />
       </ul>
     </main>
   );

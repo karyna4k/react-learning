@@ -15,3 +15,8 @@
   object-fit: cover;
   object-position: center;
 }
+
+.posts {
+  padding: 0 20px;
+  list-style: none;
+}
