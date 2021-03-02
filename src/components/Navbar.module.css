@@ -1,0 +1,17 @@
+.nav {
+  grid-area: n;
+  background-color: #ffb5a7;
+}
+
+.nav__list {
+  list-style: none;
+}
+
+.nav__link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav__link.active {
+  color: gold;
+}
