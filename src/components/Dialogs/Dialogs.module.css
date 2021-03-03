@@ -20,11 +20,11 @@ ul {
   justify-content: space-between;
 }
 
-.contactsList {
+.dialogsList {
   width: calc((100% - 30px) / 2);
 }
 
-.contactsItem a {
+.dialogItem a {
   display: block;
   padding: 10px 15px;
   background-color: #ffffff;
@@ -32,12 +32,12 @@ ul {
   color: #000000;
 }
 
-.contactsItem a:hover {
+.dialogItem a:hover {
   background-color: #f7f8fa;
   color: #000000;
 }
 
-.contactsItem a.active {
+.dialogItem a.active {
   background-color: #5181b8;
   color: #ffffff;
 }
