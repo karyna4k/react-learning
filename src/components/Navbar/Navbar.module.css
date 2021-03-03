@@ -1,22 +1,33 @@
 .nav {
   grid-area: n;
-  background: #ee9ca7;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #ffdde1, #ee9ca7);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #ffdde1, #ee9ca7);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #fff;
 }
 
 .nav__list {
+  padding-left: 15px;
   list-style: none;
 }
 
+.nav__item {
+  margin: 1px 0;
+}
+
 .nav__link {
-  color: white;
+  display: block;
+  padding: 5px 15px;
+  color: #000;
   text-decoration: none;
 }
 
-.nav__link.active {
-  color: gold;
+.nav__link:hover {
+  color: #2a5885;
+  font-weight: 600;
+}
+
+.nav__item a.active {
+  background-color: #e6e6e6;
+  color: #2a5885;
+  font-weight: 700;
+  border-radius: 7px;
+  outline: none;
 }
