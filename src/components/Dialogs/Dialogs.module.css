@@ -1,3 +1,9 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .dialogs {
   padding-top: 15px;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
@@ -18,21 +24,20 @@
   width: calc((100% - 30px) / 2);
 }
 
-.contactsItem {
+.contactsItem a {
+  display: block;
   padding: 10px 15px;
   background-color: #ffffff;
   border-top: 1px solid #e7e8ec;
   color: #000000;
-  cursor: pointer;
 }
 
-
-.contactsItem:hover {
+.contactsItem a:hover {
   background-color: #f7f8fa;
   color: #000000;
 }
 
-.contactsItem.active {
+.contactsItem a.active {
   background-color: #5181b8;
   color: #ffffff;
 }

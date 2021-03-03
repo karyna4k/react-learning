@@ -13,3 +13,8 @@
   grid-area: c;
   background-color: #ffffff;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
