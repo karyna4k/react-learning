@@ -3,7 +3,7 @@ import MyPost from "./MyPosts/MyPosts";
 
 function Profile() {
   return (
-    <main className={styles.content}>
+    <div>
       <div className={styles.content__img}>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Herjangsfjorden_%26_Ofotfjorden%2C_wide%2C_2009_09.jpg"
@@ -12,7 +12,7 @@ function Profile() {
       </div>
       <div>ava + info</div>
       <MyPost />
-    </main>
+    </div>
   );
 }
 

@@ -10,4 +10,7 @@
   padding: 0 15px;
 }
 
-
+.app-content {
+  grid-area: c;
+  background-color: #fcd5ce;
+}
