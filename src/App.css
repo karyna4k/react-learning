@@ -11,6 +11,7 @@
 
 .app-content {
   grid-area: c;
+  width: 1200px;
   background-color: #ffffff;
 }
 
