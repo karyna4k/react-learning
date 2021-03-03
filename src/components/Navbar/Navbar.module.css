@@ -1,10 +1,10 @@
 .nav {
   grid-area: n;
-  background-color: #fff;
+  background-color: #f5f5f5;
 }
 
 .nav__list {
-  padding-left: 15px;
+  padding: 0 20px;
   list-style: none;
 }
 

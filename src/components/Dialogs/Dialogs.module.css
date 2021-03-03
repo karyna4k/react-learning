@@ -1,0 +1,44 @@
+.dialogs {
+  padding-top: 15px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  margin: 10px 0 30px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #b6b6b6;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactsList {
+  width: calc((100% - 30px) / 2);
+}
+
+.contactsItem {
+  padding: 10px 15px;
+  background-color: #ffffff;
+  border-top: 1px solid #e7e8ec;
+  color: #000000;
+  cursor: pointer;
+}
+
+
+.contactsItem:hover {
+  background-color: #f7f8fa;
+  color: #000000;
+}
+
+.contactsItem.active {
+  background-color: #5181b8;
+  color: #ffffff;
+}
+
+.messagesList {
+  width: 50%;
+}
+
+.messageItem {}
