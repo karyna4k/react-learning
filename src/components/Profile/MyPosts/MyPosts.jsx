@@ -2,11 +2,15 @@ import styles from "./MyPost.module.css";
 import Post from "./Post/Post";
 
 function MyPost() {
-
-  const postsData = [
-    {id: 1, post: "It's my first post!", likesCount: 5},
-    {id: 2, post: "Hi. How are you?", likesCount: 47}
+  const posts = [
+    { id: 1, post: "It's my first post!", likesCount: 5 },
+    { id: 2, post: "Hi. How are you?", likesCount: 47 },
+    { id: 3, post: "6666", likesCount: 47 },
   ];
+
+  const postsElements = posts.map((p) => (
+    <Post message={p.post} likesCount={p.likesCount} />
+  ));
 
   return (
     <div>
@@ -17,10 +21,7 @@ function MyPost() {
           <button>Send</button>
         </form>
       </div>
-      <ul className={styles.posts}>
-        <Post message={postsData[1].post} likesCount={postsData[1].likesCount}/>
-        <Post message={postsData[0].post} likesCount={postsData[0].likesCount}/>
-      </ul>
+      <ul className={styles.posts}>{postsElements}</ul>
     </div>
   );
 }
