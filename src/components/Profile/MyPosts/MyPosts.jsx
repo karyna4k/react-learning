@@ -10,10 +10,8 @@ function MyPost(props) {
     <div>
       <div className={styles.MyPost}>
         <h2 className={styles.title}>My posts</h2>
-        <form action="">
-          <textarea name="" id="" placeholder="Your news..."></textarea>
-          <button>Send</button>
-        </form>
+        <div className={styles.textarea} role="textbox" contentEditable="true"></div>
+        <button>Post</button>
       </div>
       <ul className={styles.posts}>{postsElements}</ul>
     </div>

@@ -7,6 +7,16 @@
   list-style: none;
 }
 
-textarea {
+form {
+  display: block;
   width: 100%;
+}
+
+.textarea {
+  min-height: 80px;
+  max-height: none;
+  padding: 10px 15px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  outline: none;
 }
