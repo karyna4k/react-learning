@@ -43,13 +43,17 @@ ul {
   color: #ffffff;
 }
 
-.messagesList {
-  display: flex;
-  flex-direction: column-reverse;
+.messagesWrap {
   width: 63%;
   padding: 20px 0;
   border-top: 1px solid #e7e8ec;
   border-left: 1px solid #e7e8ec;
+}
+
+.messageList {
+  display: flex;
+  flex-direction: column-reverse;
+
 }
 .messageItem {
   display: flex;
@@ -79,4 +83,18 @@ ul {
   display: flex;
   margin: 5px 0;
   font-weight: 600;
+}
+.messageTextInner {
+  margin: 4px 7px ;
+  padding: 6px 30px 7px 30px;
+}
+.messageText {
+  display: block;
+  width: 100%;
+  resize: none;
+  outline: none;
+  overflow: auto;
+}
+.messageBtn {
+  display: block;
 }

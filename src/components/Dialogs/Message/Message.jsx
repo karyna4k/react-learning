@@ -2,7 +2,7 @@ import styles from "./../Dialogs.module.css";
 
 function Message(props) {
   return (
-    <li className={styles.messageItem}>
+    <div className={styles.messageItem}>
       <div className={styles.messageImg}>
         <img
           src="https://t4.ftcdn.net/jpg/03/32/59/65/360_F_332596535_lAdLhf6KzbW6PWXBWeIFTovTii1drkbT.jpg"
@@ -16,7 +16,7 @@ function Message(props) {
         </div>
         <div className="messageText">{props.message}</div>
       </div>
-    </li>
+    </div>
   );
 }
 

@@ -16,7 +16,13 @@ function Dialogs(props) {
       <h2 className={styles.title}>Диалоги</h2>
       <div className={styles.wrap}>
         <ul className={styles.dialogsList}>{dialogsElements}</ul>
-        <ul className={styles.messagesList}>{messagesElements}</ul>
+        <div className={styles.messagesWrap}>
+          <div className={styles.messageList}>{messagesElements}</div>
+          <div className={styles.messageTextInner}>
+            <textarea className={styles.messageText}placeholder="Text your message..."></textarea>
+            <button className={styles.messageBtn}>Send</button>
+          </div>
+        </div>
       </div>
     </div>
   );
