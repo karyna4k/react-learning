@@ -13,7 +13,7 @@ function App(props) {
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Navbar />
+        <Navbar state={props.state.navbar} />{" "}
         <main className="app-content">
           <Route
             path="/profile"
@@ -23,11 +23,11 @@ function App(props) {
             path="/dialogs"
             render={() => <Dialogs state={props.state.messagesPage} />}
           />
-          <Route path="/news" component={News} />
-          <Route path="/music" component={Music} />
-          <Route path="/settings" component={Settings} />
-        </main>
-      </div>
+          <Route path="/news" component={News} />{" "}
+          <Route path="/music" component={Music} />{" "}
+          <Route path="/settings" component={Settings} />{" "}
+        </main>{" "}
+      </div>{" "}
     </BrowserRouter>
   );
 }

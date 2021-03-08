@@ -2,7 +2,7 @@ import styles from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import Friends from "./Friends/Friends";
 
-function Navbar() {
+function Navbar(props) {
   return (
     <div>
       <nav className={styles.nav}>
@@ -54,7 +54,7 @@ function Navbar() {
           </li>
         </ul>
       </nav>
-      <Friends />
+      <Friends friends={props.state.friends} />
     </div>
   );
 }
