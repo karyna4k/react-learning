@@ -27,7 +27,13 @@ function App(props) {
           />
           <Route
             path="/dialogs"
-            render={() => <Dialogs state={props.state.messagesPage} />}
+            render={() => (
+              <Dialogs
+                messagesPage={props.state.messagesPage}
+                addMessage={props.addMessage}
+                updateNewMessageText={props.updateNewMessageText}
+              />
+            )}
           />
           <Route path="/news" component={News} />{" "}
           <Route path="/music" component={Music} />{" "}

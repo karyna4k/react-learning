@@ -52,7 +52,7 @@ ul {
 
 .messageList {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 
 }
 .messageItem {
@@ -60,13 +60,7 @@ ul {
   margin: 0 7px 4px 7px;
   padding: 6px 30px 7px 30px;
 }
-.messageItem:nth-of-type(even) {
-  text-align: left;
-}
-.messageItem:nth-of-type(odd) {
-  margin-left: auto;
-  text-align: right;
-}
+
 
 .messageImg {
   width: 36px;

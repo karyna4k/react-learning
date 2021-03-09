@@ -16,7 +16,6 @@ function MyPost(props) {
   function onChangeText() {
     let text = newPostElement.current.value;
     props.updateNewPostText(text);
-    console.log(text);
   }
 
   return (
@@ -28,6 +27,7 @@ function MyPost(props) {
           value={props.newPostText}
           ref={newPostElement}
           className={styles.textarea}
+          placeholder="Text your post..."
         />
         <button onClick={addPost}>Post</button>
       </div>

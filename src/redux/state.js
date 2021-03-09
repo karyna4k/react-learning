@@ -58,6 +58,7 @@ const state = {
         message: "And you?",
       },
     ],
+    newMessageText: "dsds",
   },
   navbar: {
     friends: [
@@ -98,6 +99,21 @@ export function addPost() {
 
 export function updateNewPostText(newText) {
   state.profilePage.newPostText = newText;
+  rerenderEntireTree(state);
+}
+
+export function addMessage() {
+  let newMessage = {
+    id: 10,
+    message: state.messagesPage.newMessageText,
+  };
+  state.messagesPage.messages.push(newMessage);
+  state.messagesPage.newMessageText = "";
+  rerenderEntireTree(state);
+}
+
+export function updateNewMessageText(newMessage) {
+  state.messagesPage.newMessageText = newMessage;
   rerenderEntireTree(state);
 }
 
