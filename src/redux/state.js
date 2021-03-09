@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from "./../render";
+let rerenderEntireTree = () => {
+  console.log("State changed");
+}
 
 const state = {
   profilePage: {
@@ -58,7 +60,7 @@ const state = {
         message: "And you?",
       },
     ],
-    newMessageText: "dsds",
+    newMessageText: "",
   },
   navbar: {
     friends: [
@@ -115,6 +117,10 @@ export function addMessage() {
 export function updateNewMessageText(newMessage) {
   state.messagesPage.newMessageText = newMessage;
   rerenderEntireTree(state);
+}
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer;
 }
 
 export default state;
