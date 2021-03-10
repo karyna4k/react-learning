@@ -1,126 +1,126 @@
-let rerenderEntireTree = () => {
-  console.log("State changed");
-}
-
-const state = {
-  profilePage: {
-    posts: [
-      { id: 1, post: "It's my first post!", likesCount: 5 },
-      {
-        id: 2,
-        post: "Hi. How are you?",
-        likesCount: 47,
-      },
-      {
-        id: 3,
-        post: "6666",
-        likesCount: 47,
-      },
-    ],
-    newPostText: "",
+const store = {
+  _state: {
+    profilePage: {
+      posts: [
+        { id: 1, post: "It's my first post!", likesCount: 5 },
+        {
+          id: 2,
+          post: "Hi. How are you?",
+          likesCount: 47,
+        },
+        {
+          id: 3,
+          post: "6666",
+          likesCount: 47,
+        },
+      ],
+      newPostText: "",
+    },
+    messagesPage: {
+      dialogs: [
+        {
+          id: 1,
+          name: "Barsik",
+        },
+        {
+          id: 2,
+          name: "Marsik",
+        },
+        {
+          id: 3,
+          name: "Pig",
+        },
+        {
+          id: 4,
+          name: "Chupa",
+        },
+        {
+          id: 5,
+          name: "Bublik",
+        },
+      ],
+      messages: [
+        {
+          id: 1,
+          message: "Hi!",
+        },
+        {
+          id: 2,
+          message: "How are you?",
+        },
+        {
+          id: 3,
+          message: "Hello! I'm fine.",
+        },
+        {
+          id: 4,
+          message: "And you?",
+        },
+      ],
+      newMessageText: "",
+    },
+    navbar: {
+      friends: [
+        {
+          id: 1,
+          name: "Barsik",
+        },
+        {
+          id: 2,
+          name: "Marsik",
+        },
+        {
+          id: 3,
+          name: "Chipik",
+        },
+        {
+          id: 4,
+          name: "Svinenok",
+        },
+        {
+          id: 5,
+          name: "Maloe",
+        },
+      ],
+    },
   },
-  messagesPage: {
-    dialogs: [
-      {
-        id: 1,
-        name: "Barsik",
-      },
-      {
-        id: 2,
-        name: "Marsik",
-      },
-      {
-        id: 3,
-        name: "Pig",
-      },
-      {
-        id: 4,
-        name: "Chupa",
-      },
-      {
-        id: 5,
-        name: "Bublik",
-      },
-    ],
-    messages: [
-      {
-        id: 1,
-        message: "Hi!",
-      },
-      {
-        id: 2,
-        message: "How are you?",
-      },
-      {
-        id: 3,
-        message: "Hello! I'm fine.",
-      },
-      {
-        id: 4,
-        message: "And you?",
-      },
-    ],
-    newMessageText: "",
+  getState() {
+    return this._state;
   },
-  navbar: {
-    friends: [
-      {
-        id: 1,
-        name: "Barsik",
-      },
-      {
-        id: 2,
-        name: "Marsik",
-      },
-      {
-        id: 3,
-        name: "Chipik",
-      },
-      {
-        id: 4,
-        name: "Svinenok",
-      },
-      {
-        id: 5,
-        name: "Maloe",
-      },
-    ],
+  _callSubscriber() {
+    console.log("State changed");
+  },
+  addPost() {
+    let newPost = {
+      id: 5,
+      post: this._state.profilePage.newPostText,
+      likesCount: 0,
+    };
+    this._state.profilePage.posts.push(newPost);
+    this._state.profilePage.newPostText = "";
+    this._callSubscriber(this._state);
+  },
+  updateNewPostText(newText) {
+    this._state.profilePage.newPostText = newText;
+    this._callSubscriber(this._state);
+  },
+  addMessage() {
+    let newMessage = {
+      id: 10,
+      message: this._state.messagesPage.newMessageText,
+    };
+    this._state.messagesPage.messages.push(newMessage);
+    this._state.messagesPage.newMessageText = "";
+    this._callSubscriber(this._state);
+  },
+  updateNewMessageText(newMessage) {
+    this._state.messagesPage.newMessageText = newMessage;
+    this._callSubscriber(this._state);
+  },
+  subscribe(observer) {
+    this._callSubscriber = observer;
   },
 };
 
-export function addPost() {
-  let newPost = {
-    id: 5,
-    post: state.profilePage.newPostText,
-    likesCount: 0,
-  };
-  state.profilePage.posts.push(newPost);
-  state.profilePage.newPostText = "";
-  rerenderEntireTree(state);
-}
-
-export function updateNewPostText(newText) {
-  state.profilePage.newPostText = newText;
-  rerenderEntireTree(state);
-}
-
-export function addMessage() {
-  let newMessage = {
-    id: 10,
-    message: state.messagesPage.newMessageText,
-  };
-  state.messagesPage.messages.push(newMessage);
-  state.messagesPage.newMessageText = "";
-  rerenderEntireTree(state);
-}
-
-export function updateNewMessageText(newMessage) {
-  state.messagesPage.newMessageText = newMessage;
-  rerenderEntireTree(state);
-}
-
-export const subscribe = (observer) => {
-  rerenderEntireTree = observer;
-}
-
-export default state;
+export default store;
+window.store = store;
