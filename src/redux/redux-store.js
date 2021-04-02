@@ -5,7 +5,7 @@ import navbarReducer from "./navbarReducer";
 
 let reducers = combineReducers({
   profilePage: profileReducer,
-  messagesPage: dialogsReducer,
+  dialogsPage: dialogsReducer,
   navbar: navbarReducer
 })
 

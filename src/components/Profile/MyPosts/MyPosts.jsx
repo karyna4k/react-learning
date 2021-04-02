@@ -1,43 +1,39 @@
 import React from "react";
 import styles from "./MyPost.module.css";
 import Post from "./Post/Post";
-import {
-  addPostActionCreator,
-  updateNewPostTextActionCreator,
-} from "./../../../redux/profileReducer";
 
-function MyPost(props) {
-  const postsElements = props.posts.map((p) => (
+const MyPosts = (props) => {
+  let postsElements = props.posts.map((p) => (
     <Post message={p.post} likesCount={p.likesCount} />
   ));
 
   let newPostElement = React.createRef();
 
-  function addPost() {
-    props.dispatch(addPostActionCreator());
-  }
+  let onAddPost = () => {
+    props.addPost();
+  };
 
-  function onChangeText() {
+  let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.dispatch(updateNewPostTextActionCreator(text));
-  }
+    props.updateNewPostText(text);
+  };
 
   return (
     <div>
       <div className={styles.MyPost}>
         <h2 className={styles.title}>My posts</h2>
         <textarea
-          onChange={onChangeText}
-          value={props.newPostText}
+          onChange={onPostChange}
           ref={newPostElement}
+          value={props.newPostText}
           className={styles.textarea}
           placeholder="Text your post..."
         />
-        <button onClick={addPost}>Post</button>
+        <button onClick={onAddPost}>Post</button>
       </div>
       <ul className={styles.posts}>{postsElements}</ul>
     </div>
   );
-}
+};
 
-export default MyPost;
+export default MyPosts;
