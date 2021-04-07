@@ -18,7 +18,7 @@ const store = {
           likesCount: 47,
         },
       ],
-      newPostText: "",
+      newMessageText: "",
     },
     dialogsPage: {
       dialogs: [
