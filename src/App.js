@@ -13,15 +13,16 @@ function App(props) {
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Navbar state={props.state.navbar} />{" "}
+        <Navbar />{" "}
+        {/* <Navbar state={props.state.navbar} />{" "} */}
         <main className="app-content">
           <Route
             path="/profile"
-            render={() => <Profile store={props.store} />}
+            render={() => <Profile />}
           />
           <Route
             path="/dialogs"
-            render={() => <DialogsContainer store={props.store} />}
+            render={() => <DialogsContainer/>}
           />
           <Route path="/news" component={News} />{" "}
           <Route path="/music" component={Music} />{" "}

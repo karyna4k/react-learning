@@ -54,7 +54,7 @@ function Navbar(props) {
           </li>
         </ul>
       </nav>
-      <Friends friends={props.state.friends} />
+      {/* <Friends friends={props.state.friends} /> */}
     </div>
   );
 }
